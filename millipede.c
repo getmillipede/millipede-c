@@ -4,7 +4,7 @@
 int main(int argc, char **argv) {
   unsigned int i;
   size_t size = 20;
-  char *padding_offsets[8] = {"  ", " ", "", " ", "  ", "   ", "    ", "   "};
+  const char *padding_offsets[8] = {"  ", " ", "", " ", "  ", "   ", "    ", "   "};
 
   if (argc > 1) {
     size = abs(atoi(argv[1]));
