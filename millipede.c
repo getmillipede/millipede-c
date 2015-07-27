@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
   char *padding_offsets[8] = {"  ", " ", "", " ", "  ", "   ", "    ", "   "};
 
   if (argc > 1) {
-    size = atoi(argv[1]);
+    size = abs(atoi(argv[1]));
   }
 
   printf("    ╚⊙ ⊙╝\n");
