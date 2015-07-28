@@ -2,17 +2,24 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
-  unsigned int i;
-  size_t size = 20;
-  const char *padding_offsets[8] = {"  ", " ", "", " ", "  ", "   ", "    ", "   "};
+	long int i = 0;
+	long int size = 20;
+	const char *padding_offsets[8] = {"  ", " ", "", " ", "  ", "   ", "    ", "   "};
 
-  if (argc > 1) {
-    size = abs(atoi(argv[1]));
-  }
+	if (argc > 1) {
+		size = strtol(argv[1],NULL,10);
+	}
 
-  printf("    ╚⊙ ⊙╝\n");
-  for (i = 0; i < size; i++) {
-    printf("%s╚═(███)═╝\n", padding_offsets[i % 8]);
-  }
-  return 0;
+	if (size >= 0) {
+		printf("    ╚⊙ ⊙╝\n");
+		for (i = 0; i < size; i++) {
+			printf("%s╚═(███)═╝\n", padding_offsets[i % 8]);
+		}
+	} else {
+		for (i = size; i <= 0; i++) {
+			printf("%s╔═(███)═╗\n", padding_offsets[abs(i)%8]);
+		}
+		printf("    ╔⊙ ⊙╗\n");
+	}
+	return 0;
 }
