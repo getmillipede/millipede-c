@@ -1,4 +1,4 @@
-TARGET = millipede
+TARGET = millipede-c
 CC = gcc
 CFLAGS = -g -Wall
 OBJECTS = millipede.o
@@ -15,4 +15,4 @@ $(TARGET): $(OBJECTS)
 
 clean:
 	rm -f millipede.o
-	rm -f millipede
+	rm -f millipede-c
